@@ -76,6 +76,7 @@ while [[ $index -lt ${#id[@]} ]]; do # For all update targets in config file
       log "Error While updating ${name[index]}"
     else
       log "${name[index]}: successfully updated from $cloudflareIP to $currentIP"
+      ./pushbullet "IP Change" "${name[index]}: successfully updated from $cloudflareIP to $currentIP"
     fi
     unset updateResult
   fi
